@@ -119,24 +119,22 @@ skills-card {
 
 /* banner */
 
-.home-content h3{
+/* .home-content h3{
   font-size: 2.1rem;
   font-weight: 700;
-}
+} */
 .home-content h1{
-  font-size: 4.0rem;
-  font-weight: 700;
+  /* font-size: 4.0rem;
+  font-weight: 700; */
   line-height: 1.3;
 
 }
-span{
-  color: var(--main-color);
-}
+
 .home-content h3:nth-of-type(2){
 margin-bottom: 2rem;
 }
 .home-img img{
-  width: 35vw;
+  /* width: 35vw; */
   animation:floatImage 4s ease-in-out infinite;
 }
 @keyframes floatImage {
@@ -151,11 +149,7 @@ margin-bottom: 2rem;
   }
   
 }
-.home-content p{
-  font-size: 1.3rem;
 
-
-}
 .social-media a{
   display: inline-flex;
   justify-content: center;
@@ -196,3 +190,4 @@ margin-bottom: 2rem;
   box-shadow: none;
 }
 /* banner */
+

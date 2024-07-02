@@ -10,7 +10,7 @@ const MySkillSet = () => {
             <h5 className='font-bold text-2xl mb-14'>Technical Proficiency</h5>
             <div className="">
                 <Tabs className="flex md:flex-row flex-col md:justify-between items-center gap-10">
-                    <TabList className="grid md:grid-cols-2 grid-cols-1 md:gap-20 gap-10">
+                    <TabList className="grid md:grid-cols-2 grid-cols-1 lg:gap-20 gap-10">
                         {
                             Skills?.map((item, index) => (
                                 <Tab key={index} className='border-0 rounded-lg' selectedClassName='active'>
@@ -24,7 +24,7 @@ const MySkillSet = () => {
                             ))
                         }
                     </TabList>
-                    <div className="lg:w-[59%] w-[100%] ">
+                    <div className="lg:w-[59%] md:w-[45%] w-[100%] ">
                         <TabPanel >
                             <div className="overflow-x-auto border-2 h-[280px] rounded-3xl p-5">
                                 <table className="table table-zebra">
@@ -34,23 +34,31 @@ const MySkillSet = () => {
 
                                             <td>HTML</td>
                                             <td>CSS</td>
-                                            <td>Tailwind</td>
-                                            <td>Bootstrap</td>
+                                          
                                         </tr>
                                         {/* row 2 */}
                                         <tr>
-                                            <td>JavaScript</td>
-                                            <td>TypeScript</td>
-                                            <td>React</td>
-                                            <td>Next js</td>
+                                        <td>Tailwind</td>
+                                        <td>Bootstrap</td>
+                                       
+                                          
                                         </tr>
                                         {/* row 3 */}
                                         <tr>
-
-                                            <td>Redux</td>
-                                            <td>DOM</td>
-                                            <td>MUI</td>
-                                            <td>Ant Design</td>
+                                        <td>JavaScript</td>
+                                        <td>TypeScript</td>
+                                        </tr>
+                                        <tr>
+                                        <td>React</td>
+                                        <td>Next js</td>
+                                        </tr>
+                                        <tr>
+                                        <td>Redux</td>
+                                        <td>DOM</td>
+                                        </tr>
+                                        <tr>
+                                        <td>MUI</td>
+                                        <td>Ant Design</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -115,7 +123,29 @@ const MySkillSet = () => {
                             </div>
                         </TabPanel>
                         <TabPanel>
-                            <h2>Any content 4</h2>
+                        <div className="overflow-x-auto border-2 h-[280px] rounded-3xl p-5">
+                                <table className="table table-zebra">
+                            
+                                    <tbody>
+                                        {/* row 1 */}
+                                       <th>Graduated</th>
+                                        <tr>
+                                        <td>Haldia Institute of Technology, MAKAUT ,West Bengal, India</td>
+                                        </tr>
+                                        <tr>
+                                        <td> B.Tech in Computer Science and Engineering</td>
+                                        </tr>
+                                        <tr>
+                                        <td>CSE</td>
+                                        </tr>
+                                        <tr>
+                                        <td>2020 - 2024</td>
+                                        </tr>
+                                     
+                                      
+                                    </tbody>
+                                </table>
+                            </div>
                         </TabPanel>
                     </div>
                 </Tabs>

@@ -41,7 +41,7 @@
 },
     
     {
-    title: "Soft Skills",
+    title: "Educational Qualification",
     icon: "insta.svg",
     skills: [
     

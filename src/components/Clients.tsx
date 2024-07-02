@@ -11,7 +11,7 @@ import Link from "next/link";
 const Clients = () => {
   const {data:blogs,isLoading}=useGetAllBlogsQuery({})
   return (
-    <section id="testimonials" className="py-20">
+    <section id="blogs" className="py-20">
       <h1 className="heading">
         Kind words from
         <span className="text-purple"> satisfied clients</span>

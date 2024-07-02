@@ -7,13 +7,14 @@ import Providers from "@/lib/Providers";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import { navItems } from "@/data";
 import Footer from "@/components/Footer";
+import WhatsApp from "@/components/ui/WhatsApp";
 
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Adrian's Portfolio",
-  description: "Modern & Minimal JS Mastery Portfolio",
+  title: "Pritom's Portfolio",
+  description: "Portfolio",
 };
 
 export default function RootLayout({
@@ -34,9 +35,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+         <WhatsApp/>
            <FloatingNav navItems={navItems} />
           {children}
-          {/* <Footer/> */}
+          <Footer/>
         </ThemeProvider>
       </body>
     </html>

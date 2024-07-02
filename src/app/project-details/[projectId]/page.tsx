@@ -6,13 +6,14 @@ import { FaLocationArrow } from "react-icons/fa6";
 
 const ProjectDetails = async ({ params }: { params: { projectId: string } }) => {
     // console.log(params);
-    const res = await fetch(`http://localhost:5000/api/v1/projects/${params.projectId}`, {
+    const res = await fetch(`https://portfolio-backend-two-snowy.vercel.app/api/v1/projects/${params.projectId}`, {
         cache: "force-cache"
     });
     const project = await res.json();
     // console.log(project);
     return (
-        <div className="min-h-screen flex justify-between items-center gap-10 max-w-5xl w-full mx-auto mt-20">
+    <div className="pt-20 bg-[#000319]">
+         <div className="min-h-screen flex justify-between items-center gap-10 max-w-5xl w-full mx-auto  ">
             <div
                 className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
             >
@@ -92,6 +93,8 @@ const ProjectDetails = async ({ params }: { params: { projectId: string } }) => 
                 </div>
             </div>
         </div>
+  
+    </div>   
     );
 };
 
