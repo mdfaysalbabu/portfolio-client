@@ -13,7 +13,7 @@ import WhatsApp from "@/components/ui/WhatsApp";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Pritom's Portfolio",
+  title: "Faysal Portfolio",
   description: "Portfolio",
 };
 

@@ -1,16 +1,18 @@
-"use server"
+"use server";
 import { TBlog } from "@/types";
 
 const BlogPage = async () => {
-  const res = await fetch('https://portfolio-backend-two-snowy.vercel.app/api/v1/blogs', {
-    cache: 'force-cache'
-  });
+  const res = await fetch(
+    "https://my-portfolio-backend-psi.vercel.app/api/v1/blogs",
+    {
+      cache: "force-cache",
+    }
+  );
   const blogs = await res.json();
   return (
     <div className="py-32 bg-[#000319]">
       <div className="grid grid-cols-2 gap-10 min-h-screen  mx-10 ">
-      {
-        blogs?.data?.map((item: TBlog) =>
+        {blogs?.data?.map((item: TBlog) => (
           <div
             //   change md:w-[450px] to md:w-[60vw] , px-8 py-6 to p-16, border-slate-700 to border-slate-800
             className="w-[90vw] max-w-full relative rounded-2xl border border-b-0
@@ -39,7 +41,11 @@ const BlogPage = async () => {
               <div className="relative z-20 mt-6 flex flex-row items-center">
                 {/* add this div for the profile img */}
                 <div className="me-3">
-                  <img className="w-10 h-10 rounded-full" src={item?.file} alt="profile" />
+                  <img
+                    className="w-10 h-10 rounded-full"
+                    src={item?.file}
+                    alt="profile"
+                  />
                 </div>
                 <span className="flex flex-col gap-1">
                   {/* change text color, font-normal to font-bold, text-xl */}
@@ -54,9 +60,8 @@ const BlogPage = async () => {
               </div>
             </blockquote>
           </div>
-        )
-      }
-    </div>
+        ))}
+      </div>
     </div>
   );
 };

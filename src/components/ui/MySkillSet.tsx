@@ -1,155 +1,146 @@
-"use client"
-import SkillCard from '@/components/ui/SkillCard';
+"use client";
+
 import Skills from '../../data/data';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import Image from 'next/image';
+import { AiFillHtml5 } from 'react-icons/ai';
+import {  FaNodeJs, FaTools, FaGraduationCap } from 'react-icons/fa';
+
 const MySkillSet = () => {
+    const getIcon = (title:any) => {
+        switch (title.toLowerCase()) {
+            case 'frontend':
+                return <AiFillHtml5 size={50} color="#F59E0B" />;
+            case 'backend':
+                return <FaNodeJs size={50} color="#8B5CF6" />;
+            case 'tools':
+                return <FaTools size={50} color="#10B981" />;
+            case 'educational qualification':
+                return <FaGraduationCap size={50} color="#3B82F6" />;
+            default:
+                return null;
+        }
+    };
+
     return (
-        <section className="h-[100%]">
-            <h5 className='font-bold text-2xl mb-14'>Technical Proficiency</h5>
-            <div className="">
-                <Tabs className="flex md:flex-row flex-col md:justify-between items-center gap-10">
-                    <TabList className="grid md:grid-cols-2 grid-cols-1 lg:gap-20 gap-10">
-                        {
-                            Skills?.map((item, index) => (
-                                <Tab key={index} className='border-0 rounded-lg' selectedClassName='active'>
-                                    <button className={`skills-card btn btn-outline relative btn-primary h-[100px] w-[200px] text-white`}>
-                                        <div className="absolute -left-[20px] -top-[15px]">
-                                            <Image className="bg-[#7c5fe6] p-2 rounded-lg border border-gray-400" src={item.icon} width={50} height={50} alt={item.title} />
-                                        </div>
-                                        <p className='text-white'>{item.title}</p>
-                                    </button>
-                                </Tab>
-                            ))
-                        }
+        <section className="min-h-screen py-20 text-white">
+            <div className="container mx-auto px-4">
+                <h5 className="font-bold text-4xl mb-14 text-center animate-fade-in">Technical Proficiency</h5>
+                <Tabs className="flex flex-col md:flex-row justify-between items-center gap-10">
+                    <TabList className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
+                        {Skills?.map((item, index) => (
+                            <Tab key={index} className="border-0 rounded-lg transition-all duration-300 transform hover:scale-110">
+                                <button className="skills-card btn btn-outline relative btn-white h-[120px] w-[220px] text-white bg-gradient-to-r from-gray-700 via-purple-400 to-pink-400 shadow-lg hover:shadow-2xl">
+                                    <div className="absolute -left-[20px] -top-[15px]">
+                                        {getIcon(item.title)}
+                                    </div>
+                                    <p className="text-lg font-semibold">{item.title}</p>
+                                </button>
+                            </Tab>
+                        ))}
                     </TabList>
-                    <div className="lg:w-[59%] md:w-[45%] w-[100%] ">
-                        <TabPanel >
-                            <div className="overflow-x-auto border-2 h-[280px] rounded-3xl p-5">
-                                <table className="table table-zebra">
+                    <div className="lg:w-[59%] md:w-[45%] w-[100%]">
+                        <TabPanel>
+                            <div className="overflow-x-auto border-2 h-[300px] rounded-3xl p-5 bg-white text-black shadow-2xl">
+                                <table className="table-auto w-full">
                                     <tbody>
-                                        {/* row 1 */}
-                                        <tr>
-
-                                            <td>HTML</td>
-                                            <td>CSS</td>
-                                          
+                                        <tr className="border-b">
+                                            <td className="p-4">HTML</td>
+                                            <td className="p-4">CSS</td>
                                         </tr>
-                                        {/* row 2 */}
-                                        <tr>
-                                        <td>Tailwind</td>
-                                        <td>Bootstrap</td>
-                                       
-                                          
+                                        <tr className="border-b">
+                                            <td className="p-4">Tailwind</td>
+                                            <td className="p-4">Bootstrap</td>
                                         </tr>
-                                        {/* row 3 */}
-                                        <tr>
-                                        <td>JavaScript</td>
-                                        <td>TypeScript</td>
+                                        <tr className="border-b">
+                                            <td className="p-4">JavaScript</td>
+                                            <td className="p-4">TypeScript</td>
                                         </tr>
-                                        <tr>
-                                        <td>React</td>
-                                        <td>Next js</td>
+                                        <tr className="border-b">
+                                            <td className="p-4">React</td>
+                                            <td className="p-4">Next.js</td>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <td className="p-4">Redux</td>
+                                            <td className="p-4">DOM</td>
                                         </tr>
                                         <tr>
-                                        <td>Redux</td>
-                                        <td>DOM</td>
+                                            <td className="p-4">Material-UI</td>
+                                            <td className="p-4">Ant Design</td>
                                         </tr>
-                                        <tr>
-                                        <td>MUI</td>
-                                        <td>Ant Design</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </TabPanel>
-                        <TabPanel  >
-                        <div className="overflow-x-auto border-2 h-[280px] rounded-3xl p-5">
-                                <table className="table table-zebra">
-                                    <tbody>
-                                        {/* row 1 */}
-                                        <tr>
-
-                                            <td>Node Js </td>
-                                            <td>Express Js</td>
-                                           
-                                      
-                                        </tr>
-                                        {/* row 2 */}
-                                        <tr>
-                                        <td>Prisma</td>
-                                            <td>PostgreSql</td>
-                                                                                               
-                                        </tr>
-                                        <tr>
-                                        <td>Mongodb</td>
-                                        <td>Mongoose ODM</td>
-                                        </tr>
-                                      
                                     </tbody>
                                 </table>
                             </div>
                         </TabPanel>
                         <TabPanel>
-                        <div className="overflow-x-auto border-2 h-[280px] rounded-3xl p-5">
-                                <table className="table table-zebra">
+                            <div className="overflow-x-auto border-2 h-[300px] rounded-3xl p-5 bg-white text-black shadow-2xl">
+                                <table className="table-auto w-full">
                                     <tbody>
-                                        {/* row 1 */}
-                                        <tr>
-
-                                            <td>Figma</td>
-                                            <td>Git</td>
-                                           
-                                      
+                                        <tr className="border-b">
+                                            <td className="p-4">Node.js</td>
+                                            <td className="p-4">Express.js</td>
                                         </tr>
-                                        {/* row 2 */}
-                                        <tr>
-                                        <td>Vs code</td>
-                                        <td>Vercel</td>
-                                                                                               
+                                        <tr className="border-b">
+                                            <td className="p-4">Prisma</td>
+                                            <td className="p-4">PostgreSQL</td>
                                         </tr>
                                         <tr>
-                                        <td>Netlify</td>
-                                        <td>Render</td>
+                                            <td className="p-4">MongoDB</td>
+                                            <td className="p-4">Mongoose ODM</td>
                                         </tr>
-                                        <tr>
-                                        <td>C Panel</td>
-                                        <td>Postman</td>
-                                        </tr>
-                                      
                                     </tbody>
                                 </table>
                             </div>
                         </TabPanel>
                         <TabPanel>
-                        <div className="overflow-x-auto border-2 h-[280px] rounded-3xl p-5">
-                                <table className="table table-zebra">
-                            
+                            <div className="overflow-x-auto border-2 h-[300px] rounded-3xl p-5 bg-white text-black shadow-2xl">
+                                <table className="table-auto w-full">
                                     <tbody>
-                                        {/* row 1 */}
-                                       <th>Graduated</th>
-                                        <tr>
-                                        <td>Haldia Institute of Technology, MAKAUT ,West Bengal, India</td>
+                                        <tr className="border-b">
+                                            <td className="p-4">Figma</td>
+                                            <td className="p-4">Git</td>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <td className="p-4">VS Code</td>
+                                            <td className="p-4">Vercel</td>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <td className="p-4">Netlify</td>
+                                            <td className="p-4">Render</td>
                                         </tr>
                                         <tr>
-                                        <td> B.Tech in Computer Science and Engineering</td>
+                                            <td className="p-4">cPanel</td>
+                                            <td className="p-4">Postman</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </TabPanel>
+                        <TabPanel>
+                            <div className="overflow-x-auto border-2 h-[300px] rounded-3xl p-5 bg-white text-black shadow-2xl">
+                                <table className="table-auto w-full">
+                                    <tbody>
+                                        <tr className="border-b">
+                                            <th className="p-4">Graduated</th>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <td className="p-4">Haldia Institute of Technology, MAKAUT, West Bengal, India</td>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <td className="p-4">B.Tech in Computer Science and Engineering</td>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <td className="p-4">CSE</td>
                                         </tr>
                                         <tr>
-                                        <td>CSE</td>
+                                            <td className="p-4">2019 - 2023</td>
                                         </tr>
-                                        <tr>
-                                        <td>2020 - 2024</td>
-                                        </tr>
-                                     
-                                      
                                     </tbody>
                                 </table>
                             </div>
                         </TabPanel>
                     </div>
                 </Tabs>
-                <div className="skills-info"></div>
             </div>
         </section>
     );

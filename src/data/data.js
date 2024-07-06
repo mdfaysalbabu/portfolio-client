@@ -1,8 +1,9 @@
+ 
  const Skills = [
 
     {
     title: "Frontend",
-    icon: "/webinar.png",
+    icon: "insta.svg",
     skills: [
     
     { skill: "HTML5", percentage: "80%"},

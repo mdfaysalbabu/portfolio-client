@@ -6,6 +6,8 @@ import Grid from "@/components/Grid";
 import RecentProjects from "@/components/RecentProjects";
 import MySkillSet from "@/components/ui/MySkillSet";
 import Banner from "@/components/Banner";
+import Rank from "@/components/rank/index";
+import GitStats from "@/components/stats/index";
 
 const Home = () => {
   return (
@@ -18,8 +20,10 @@ const Home = () => {
         {/* <SkillSet/> */}
         <MySkillSet/>
         <RecentProjects />
-        <Clients />
         <Experience />
+        {/* <Rank></Rank> */}
+        {/* <GitStats></GitStats> */}
+        <Clients></Clients>
         <Approach/>
        
      
